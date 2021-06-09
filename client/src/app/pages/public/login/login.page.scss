@@ -1,0 +1,71 @@
+.welcome-text {
+  margin-left: 5%;
+  font-family: 'IBMPlexSans-Bold';
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0.78;
+  text-align: left;
+  color: #1a1a1a;
+}
+
+.name-text {
+  margin-left: 5%;
+  font-family: 'IBMPlexSans-Bold';
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 0.78;
+  text-align: left;
+  color: #1a1a1a;
+}
+
+.align-welcome-text {
+  margin-top: 40%;
+}
+.background {
+  --ion-background-color: #f5fcf6;
+}
+
+ion-input {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 972px;
+  --background: white;
+  --color: black;
+  --padding-start: 5% !important;
+  border-radius: 25px;
+  border: solid 1px #707070;
+  ion-icon {
+    font-size: 25px;
+  }
+}
+
+.email-input {
+  margin-top: 20%;
+}
+
+.password-input {
+  margin-top: 15%;
+}
+
+.align-icon {
+  padding-left: 6%;
+}
+
+.align-login-button {
+  text-align: center;
+  margin-top: 5%;
+  ion-button {
+    width: 35% !important;
+    --border-radius: 25px;
+    --background:#ffde03;
+    --color: #1a1a1a;
+    --border-color:#707070;
+    --border-width:1px;
+    --box-shadow:none;
+  }
+}
+.Forgot-password {
+    font-size: 15px;
+    color: #ffde03;
+    margin-top: 5%;;
+    text-align: center;
+  }
