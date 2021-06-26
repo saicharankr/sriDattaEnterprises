@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Invoice List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Search" searchIcon></ion-searchbar>
+  <ion-item lines="none">
+    <ion-label>From Date</ion-label>
+    <ion-datetime displayFormat="D MMM YYYY" min="2021" max="2030" value={{todayDate}}></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>To Date</ion-label>
+    <ion-datetime displayFormat="D MMM YYYY" min="2021" max="2030" value={{todayDate}}></ion-datetime>
+  </ion-item>
+  <ion-grid>
+    <ion-item [ngClass]="user.paymentStatusCurrentMonth === 'Paid' ? 'content-card-paid':'content-card-unpaid'" lines="none" *ngFor="let user of tasksData">
+        <ion-thumbnail slot="start">
+          <img src="assets/custom-icons/user-avatar.svg" />
+        </ion-thumbnail>
+      <ion-col>
+        <ion-label class="name">{{user.name}}</ion-label>
+        <ion-label class="loanId">Loan no. :- {{user.loanNo}}</ion-label>
+        <ion-label class="EMI">EMI :- {{user.emi}}</ion-label>
+      </ion-col>
+    </ion-item>
+  </ion-grid>
+</ion-content>

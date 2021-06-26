@@ -6,7 +6,8 @@ import { CollectionDashboardPage } from './collection-dashboard.page';
 const routes: Routes = [
   {
     path: '',
-    component: CollectionDashboardPage
+    component: CollectionDashboardPage,
+    children:[]
   }
 ];
 

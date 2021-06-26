@@ -240,3 +240,20 @@
   font-family: 'IBMPlexSans-Bold';
   src: url('../assets/fonts/IBMPlexSans-Bold.ttf');
 }
+@font-face {
+  font-family: 'BalooTammudu2-Bold';
+  src: url('../assets/fonts/BalooTammudu2-Bold.ttf');
+}
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('../assets/fonts/SourceSansPro-Bold.ttf');
+}
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  src: url('../assets/fonts/SourceSansPro-Light.ttf');
+}
+.searchbar-input.sc-ion-searchbar-md{
+  border:2px solid #ffde03;
+}
+
+

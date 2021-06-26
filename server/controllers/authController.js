@@ -153,9 +153,10 @@ exports.Activate = async (req, res) => {
 };
 
 //PasswordReset Flow
-exports.ForgotPassword = async (res, req) => {
+exports.ForgotPassword = async (req,res) => {
   try {
-    const { email } = req.body;
+    console.log(req.body)
+    const { email } =await req.body;
     if (!email) {
       return res.send({
         status: 400,

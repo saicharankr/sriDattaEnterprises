@@ -12,14 +12,14 @@
     </ion-row>
     <ion-row class="email-input">
       <ion-item lines="none">
-        <ion-input placeholder="Password">
+        <ion-input placeholder="Password" [(ngModel)]="otp" name="otp">
           <ion-icon class="align-icon" src="assets/custom-icons/Password.svg"></ion-icon>
         </ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-col class="align-login-button">
-        <ion-button>SUBMIT</ion-button>
+        <ion-button (click)="submitOtp()">SUBMIT</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

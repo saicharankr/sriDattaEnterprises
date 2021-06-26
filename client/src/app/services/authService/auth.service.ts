@@ -1,4 +1,4 @@
-import { ErrorHandlingService } from './../errorHandling/error-handling.service';
+import { AlertService } from './../alertService/alert.service';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -20,19 +20,19 @@ export class AuthService {
     private storage: StorageService,
     private helper: JwtHelperService,
     private http: HttpClient,
-    private errorService: ErrorHandlingService
+    private alert:AlertService
+ 
   ) {
     this.loadUser();
   }
   url = environment.url;
-  user = null;
 
- async loadUser() {
-   await this.storage.get(TOKEN_KEY).then((res) => {
+  async loadUser() {
+    await this.storage.get(TOKEN_KEY).then((res) => {
       if (res) {
-        this.user = this.helper.decodeToken(res);
-        this.currentUser.next(this.user);
-        this.navigateOnRole(this.user);
+        var user = this.helper.decodeToken(res);
+        this.currentUser.next(user);
+        this.navigateOnRole(user);
       } else {
         this.currentUser.next(false);
       }
@@ -43,12 +43,13 @@ export class AuthService {
     return this.http.post<any>(`${this.url}/signin`, credentials).pipe(
       tap(async (res) => {
         await this.storage.set(TOKEN_KEY, res.token);
-        this.user = await this.helper.decodeToken(res.token);
-        this.currentUser.next(this.user);
+        var user = await this.helper.decodeToken(res.token);
+        this.currentUser.next(user);
+        this.navigateOnRole(user);
       }),
       catchError((error) => {
         if (error.error) {
-          return this.errorService.errorMessage(error.error.message);
+          return this.alert.errorMessageAlert(error.error.message);
         } else {
           console.log(error);
         }
@@ -56,20 +57,48 @@ export class AuthService {
     );
   }
 
+  forgotPasswordSendOtp(body) {
+    return this.http.post<any>(`${this.url}/forgot-password`, body).toPromise().catch(
+      error => {
+        if (error.error) {
+          return this.alert.errorMessageAlert(error.error.message);
+        } else {
+          console.log(error)
+        }
+      }
+    )
+  }
+
+  resetPassword(body) {
+    return this.http.post<any>(`${this.url}/reset-password`, body).toPromise().catch(
+      error => {
+        if (error.error) {
+          return this.alert.errorMessageAlert(error.error.message);
+        } else {
+          console.log(error)
+        }
+      }
+    )
+  }
+
   navigateOnRole(user) {
-    if (user.role === 0) {
-      this.router.navigateByUrl('/admin-dashboard',{replaceUrl: true })
-    } else if (user.role === 1) {
-      this.router.navigateByUrl('/showroom-dashboard',{replaceUrl: true })
-    } else if (user.role === 2) {
-      this.router.navigateByUrl('/collection-dashboard',{replaceUrl: true })
+    // this.router.navigateByUrl('/tabs', { replaceUrl: true });
+    if (user.role === environment.roles.adminUser) {
+      this.router.navigateByUrl('/tabs/admin-dashboard', { replaceUrl: true });
+    } else if (user.role === environment.roles.showroomUser) {
+      this.router.navigateByUrl('/tabs/showroom-dashboard', { replaceUrl: true });
+    } else if (user.role === environment.roles.collectionAgent) {
+      this.router.navigateByUrl('/tabs/collection-dashboard', { replaceUrl: true });
     }
   }
 
   // Access the current user
-   getUser() {
-    console.log(this.currentUser)
+  getUser() {
     return this.currentUser.asObservable();
+  }
+
+  getUserForTabs() {
+    return this.currentUser.value
   }
 
   // Remove all information of the previous user

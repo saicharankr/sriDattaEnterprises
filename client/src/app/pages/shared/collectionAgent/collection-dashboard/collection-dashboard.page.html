@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>collection-dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-button (click)="logout()">LogOut</ion-button>
+  <ion-toolbar class="header-toolbar">
+      <ion-title class="header-title" slot="start">
+        <h1>Welcome back</h1>
+        <h2>UserName</h2>
+      </ion-title>
+      <ion-avatar class="header-profile-image" slot="end">
+        <img src="assets/custom-icons/user-avatar.svg">
+      </ion-avatar>
+  </ion-toolbar>
+  <ion-item class="tasks-card" lines="none" (click)="tasks()">
+    <ion-icon src="assets/custom-icons/tasks.svg" slot="start"></ion-icon>
+    <ion-label>Tasks</ion-label>
+  </ion-item>
+  <ion-item class="tasks-card bottom-padding" lines="none" (click)="collections()">
+    <ion-icon src="assets/custom-icons/tasks.svg" slot="start"></ion-icon>
+    <ion-label>Collections</ion-label>
+  </ion-item>
 </ion-content>

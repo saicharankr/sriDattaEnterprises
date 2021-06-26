@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-email-otp',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailOtpPage implements OnInit {
 
-  constructor() { }
+constructor(private router:Router) { }
+
+  otp: string;
 
   ngOnInit() {
+  }
+
+  submitOtp() {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        otp:this.otp
+      }
+    }
+    this.router.navigate(['/reset-password'],navigationExtras)
   }
 
 }

@@ -1,0 +1,19 @@
+<ion-tabs>
+  <ion-tab-bar class="tab-bar" slot="bottom">
+      <ion-tab-button *ngIf="this.role == admin" tab="admin-dashboard">
+        <ion-icon  src="assets/custom-icons/home.svg"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button *ngIf="this.role == showroom" tab="showroom-dashboard">
+        <ion-icon  src="assets/custom-icons/home.svg"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button *ngIf="this.role == collectionAgent" tab="collection-dashboard">
+        <ion-icon  src="assets/custom-icons/home.svg"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="invoices-list">
+        <ion-icon  src="assets/custom-icons/paper.svg"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="settings">
+        <ion-icon  src="assets/custom-icons/setting.svg"></ion-icon>
+      </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

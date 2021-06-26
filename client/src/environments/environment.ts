@@ -6,7 +6,8 @@ const ServerUrl ="http://localhost:8080"
 
 export const environment = {
   production: false,
-  url:ServerUrl
+  url: ServerUrl,
+  roles:{adminUser:0,showroomUser:1,collectionAgent:2}
 };
 
 /*

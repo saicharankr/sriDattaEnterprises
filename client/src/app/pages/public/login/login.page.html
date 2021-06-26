@@ -2,7 +2,7 @@
   <ion-grid>
     <ion-row class="align-welcome-text">
       <ion-col>
-        <ion-label class="welcome-text">Welcome to</ion-label>
+        <ion-label class="welcome-text">{{'LOGIN_PAGE.WELCOME_TEXT' | translate}}</ion-label>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -31,7 +31,7 @@
     </ion-row>
     <ion-row>
       <ion-col class="Forgot-password">
-        <ion-label>Forgot password?</ion-label>
+        <ion-label (click)="forgotPassword()">Forgot password?</ion-label>
       </ion-col>
     </ion-row>
   </ion-grid>

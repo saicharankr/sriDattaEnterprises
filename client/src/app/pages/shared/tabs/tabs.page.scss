@@ -1,0 +1,12 @@
+.tab-bar{
+    --background: #ffde03;
+    border-top-left-radius: 55px;
+    height: 10%;
+    // border-top: 1px black solid;
+    // border-left: 1px black solid;
+}
+
+ion-tab-button{
+    --color-selected:rgb(126, 126, 126);
+    --color:black;
+}

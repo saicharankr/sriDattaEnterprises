@@ -1,9 +1,6 @@
-import { StorageService } from './../../../services/StorageService/storage.service';
 import { AuthService } from './../../../services/authService/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { take, map, filter } from 'rxjs/operators';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +9,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginPage implements OnInit {
   constructor(
-    private storage: StorageService,
     private auth: AuthService,
     private router: Router,
-    private helper: JwtHelperService
   ) {}
 
   emailId: string;
@@ -29,11 +24,10 @@ export class LoginPage implements OnInit {
       email: this.emailId,
       password: this.password,
     };
-    this.auth.signin(cred).subscribe((user) => {
-      if (user) {
-        this.user = this.helper.decodeToken(user.token);
-        this.auth.navigateOnRole(this.user);
-      }
-    });
+    this.auth.signin(cred).subscribe();
+  }
+
+  forgotPassword() {
+    this.router.navigateByUrl('/forgot-password',{ replaceUrl: true })
   }
 }
