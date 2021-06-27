@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { TranslateModule ,TranslateLoader,TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const TOKEN_KEY = 'access_token';
@@ -52,7 +53,8 @@ export function createTranslateLoader(httpClient: HttpClient) {
         useFactory: jwtOptionsFactory,
         deps: [Storage],
       }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },TranslatePipe,StatusBar],
   bootstrap: [AppComponent],

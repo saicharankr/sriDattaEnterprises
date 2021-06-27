@@ -1,3 +1,4 @@
+import { Router,NavigationExtras } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoicesListPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
   tasksData: any = [
     {
       id: 1,
@@ -70,8 +71,15 @@ export class InvoicesListPage implements OnInit {
   todayDate: any;
   ngOnInit() {
     var today = new Date()
-    this.todayDate = today.getUTCFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate()  ;
-    console.log(this.todayDate)
+    this.todayDate = today.getUTCFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+  }
+  invoiceDetails(user) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        invoice:user
+      }
+    }
+    this.router.navigate(['/invoice-details'],navigationExtras)
   }
 
 }

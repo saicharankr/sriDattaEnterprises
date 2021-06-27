@@ -3,7 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AuthGuard } from './guards/auth.guard';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -70,6 +69,7 @@ const routes: Routes = [
       import('./pages/shared/customer-details/customer-details.module').then(
         (m) => m.CustomerDetailsPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'contact-us',
@@ -77,6 +77,7 @@ const routes: Routes = [
       import('./pages/shared/contact-us/contact-us.module').then(
         (m) => m.ContactUsPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'about-us',
@@ -84,6 +85,7 @@ const routes: Routes = [
       import('./pages/shared/about-us/about-us.module').then(
         (m) => m.AboutUsPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'support',
@@ -91,6 +93,7 @@ const routes: Routes = [
       import('./pages/shared/support/support.module').then(
         (m) => m.SupportPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'add-customer',
@@ -98,6 +101,7 @@ const routes: Routes = [
       import('./pages/shared/showroom/add-customer/add-customer.module').then(
         (m) => m.AddCustomerPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'add-showroom',
@@ -105,6 +109,7 @@ const routes: Routes = [
       import('./pages/shared/admin/add-showroom/add-showroom.module').then(
         (m) => m.AddShowroomPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'list-showrooms',
@@ -112,6 +117,7 @@ const routes: Routes = [
       import('./pages/shared/admin/list-showrooms/list-showrooms.module').then(
         (m) => m.ListShowroomsPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'list-collection-agents',
@@ -119,6 +125,7 @@ const routes: Routes = [
       import(
         './pages/shared/admin/list-collection-agents/list-collection-agents.module'
       ).then((m) => m.ListCollectionAgentsPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'add-collection-agents',
@@ -126,6 +133,7 @@ const routes: Routes = [
       import(
         './pages/shared/admin/add-collection-agents/add-collection-agents.module'
       ).then((m) => m.AddCollectionAgentsPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'assign-tasks',
@@ -133,6 +141,7 @@ const routes: Routes = [
       import('./pages/shared/admin/assign-tasks/assign-tasks.module').then(
         (m) => m.AssignTasksPageModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'tabs',
@@ -142,7 +151,11 @@ const routes: Routes = [
   },
   {
     path: 'collections',
-    loadChildren: () => import('./pages/shared/collections/collections.module').then( m => m.CollectionsPageModule)
+    loadChildren: () =>
+      import('./pages/shared/collections/collections.module').then(
+        (m) => m.CollectionsPageModule
+      ),
+    canActivate: [AuthGuard],
   },
   // {
   //   path: 'admin-dashboard',
@@ -172,8 +185,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

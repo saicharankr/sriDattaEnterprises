@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoice-details',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceDetailsPage implements OnInit {
 
-  constructor() { }
+  user: any;
+  todayDate: any;
+  constructor(private router: Router, private activateRoute: ActivatedRoute,) {
+    this.activateRoute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.user=this.router.getCurrentNavigation().extras.state.invoice
+      }
+    })
+   }
 
   ngOnInit() {
+    var today = new Date()
+    this.todayDate = today.getUTCFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
   }
 
 }

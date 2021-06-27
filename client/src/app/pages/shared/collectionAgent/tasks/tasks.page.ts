@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks.page.scss'],
 })
 export class TasksPage implements OnInit {
-
+  constructor(private router:Router) { }
   //demo tasks list 
   tasksData: any = [
     {
@@ -68,11 +69,19 @@ export class TasksPage implements OnInit {
   ];
 
   todayDate: any;
-  constructor() { }
+ 
 
   ngOnInit() {
     var today = new Date()
     this.todayDate = today.getDate() + "/" + today.getMonth()+"/" + today.getUTCFullYear();
+  }
+  customerDetails(user) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        details:user
+      }
+    }
+    this.router.navigate(['/customer-details'],navigationExtras)
   }
 
 }

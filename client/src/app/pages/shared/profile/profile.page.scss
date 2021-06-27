@@ -13,3 +13,27 @@ ion-header {
       font-size: 24px;
     }
   }
+
+  .profile-pic{
+    display: flex;
+    justify-content: center;
+  }
+  .profileCard{
+    --background:white;
+    border:1px solid gray;
+    border-radius:5vw;
+    height:85vw;
+    ion-label{
+      font-family: "SourceSansPro-Bold";
+    }
+  }
+
+  .button{
+    display: flex;
+    justify-content: center;
+    ion-button{
+      --background: #ffde03;
+      --color:black;
+      --border-radius: 14px;
+    }
+  }

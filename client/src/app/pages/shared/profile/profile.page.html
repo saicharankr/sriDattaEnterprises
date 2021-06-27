@@ -1,10 +1,36 @@
 <ion-header>
   <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Profile</ion-title>
-    <ion-icon slot="end" src="assets/custom-icons/setting.svg"></ion-icon>
+    <ion-icon slot="end" src="assets/custom-icons/profile.svg"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<ion-card class="profileCard">
+  <ion-card-content>
+    <div class="profile-pic">
+      <ion-avatar style="width: 30vw;height: 30vw;">
+        <img src="assets/custom-icons/addpic.svg">
+      </ion-avatar>
+    </div>
+    <ion-item>
+      <ion-label>Name : </ion-label>
+      <ion-input value="Rama"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Number : </ion-label>
+      <ion-input type="tel" value="9381784581" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email : </ion-label>
+      <ion-input type="tel" value="cherry1476@hotmail.com" ></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <div class="button">
+    <ion-button>Save</ion-button>
+  </div>
+</ion-card>
 </ion-content>

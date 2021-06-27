@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>customer-details</ion-title>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Customer Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+    <ion-card-header>
+      <ion-item lines="none">
+        <ion-label>Showroom</ion-label>
+        <ion-icon src="assets/custom-icons/down-arrow.svg" *ngIf="!item.expanded" slot="end"></ion-icon>
+        <ion-icon src="assets/custom-icons/up-arrow.svg" *ngIf="item.expanded" slot=end></ion-icon>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <app-expandable expandHeight="100px" [expanded]="item.expanded">
+        <p>Hello there.</p>
+        <p>Hello there.</p>
+        <p>Hello there.</p>
+        <p>Hello there.</p>
+        <p>Hello there.</p>
+        <p>Hello there.</p>
+      </app-expandable>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

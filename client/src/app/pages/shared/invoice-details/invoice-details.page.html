@@ -1,12 +1,73 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-toolbar">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>invoiceDetails</ion-title>
+    <ion-title>Invoice List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<ion-grid>
+  <ion-label class="label">Receipt Details</ion-label>
+  <ion-card class="content-card">
+    <ion-card-content>
+      <ion-item  lines="none">
+        <ion-label >Invoice No. :</ion-label>
+        <ion-text >00014</ion-text>
+      </ion-item>
+      <ion-item  lines="none">
+        <ion-label >Customer Name :</ion-label>
+        <ion-text >{{user.name}}</ion-text>
+      </ion-item>
+      <ion-item  lines="none">
+        <ion-label >Loan No. :</ion-label>
+        <ion-text >{{user.loanNo}}</ion-text>
+      </ion-item>
+      <ion-item  lines="none">
+        <ion-label >Payment Method :</ion-label>
+        <ion-text >Cash</ion-text>
+      </ion-item>
+      <ion-item  lines="none">
+        <ion-label >EMI Date :</ion-label>
+        <ion-text>{{todayDate}}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="table-card">
+    <ion-row class="table-header">
+      <ion-col><ion-label>SL No.</ion-label></ion-col>
+      <ion-col><ion-label>Date</ion-label></ion-col>
+      <ion-col><ion-label>Desc</ion-label></ion-col>
+      <ion-col><ion-label>Amount</ion-label></ion-col>
+    </ion-row>
+    <ion-row class="table-content">
+      <ion-col><ion-label>1</ion-label></ion-col>
+      <ion-col><ion-label>{{todayDate}}</ion-label></ion-col>
+      <ion-col><ion-label>EMI</ion-label></ion-col>
+      <ion-col><ion-label>{{user.perEmiAmount}}</ion-label></ion-col>
+    </ion-row>
+    <ion-row class="table-footer">
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col><ion-label>Total</ion-label></ion-col>
+      <ion-col><ion-label>{{user.perEmiAmount}}</ion-label></ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="content-card">
+    <ion-card-content>
+      <ion-item  lines="none">
+        <ion-label>Remarks :</ion-label>
+        <ion-text>App</ion-text>
+      </ion-item>
+      <ion-item  lines="none">
+        <ion-label>Collected By :</ion-label>
+        <ion-text >Rama</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <div class="button">
+    <ion-button>Print</ion-button>
+  </div>
+</ion-grid>
 </ion-content>

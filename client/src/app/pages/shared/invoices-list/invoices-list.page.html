@@ -18,7 +18,7 @@
     <ion-datetime displayFormat="D MMM YYYY" min="2021" max="2030" value={{todayDate}}></ion-datetime>
   </ion-item>
   <ion-grid>
-    <ion-item [ngClass]="user.paymentStatusCurrentMonth === 'Paid' ? 'content-card-paid':'content-card-unpaid'" lines="none" *ngFor="let user of tasksData">
+    <ion-item class="content-card-paid"  lines="none" *ngFor="let user of tasksData" (click)="invoiceDetails(user)">
         <ion-thumbnail slot="start">
           <img src="assets/custom-icons/user-avatar.svg" />
         </ion-thumbnail>

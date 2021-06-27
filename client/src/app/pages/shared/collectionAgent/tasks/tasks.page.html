@@ -13,7 +13,7 @@
     <ion-label>Today :- {{todayDate}}</ion-label>
   </ion-item>
   <ion-grid>
-    <ion-item [ngClass]="user.paymentStatusCurrentMonth === 'Paid' ? 'content-card-paid':'content-card-unpaid'" lines="none" *ngFor="let user of tasksData">
+    <ion-item [ngClass]="user.paymentStatusCurrentMonth === 'Paid' ? 'content-card-paid':'content-card-unpaid'" lines="none" *ngFor="let user of tasksData" (click)="customerDetails(user)">
         <ion-thumbnail slot="start">
           <img src="assets/custom-icons/user-avatar.svg" />
         </ion-thumbnail>
