@@ -1,0 +1,80 @@
+ion-header{
+    position: unset !important;
+}
+.header-toolbar {
+    text-align: left;
+    --background: white;
+    border-right:1px solid #ffde03;
+    border-bottom: 2px solid #ffde03;
+    border-bottom-right-radius: 61px;
+    box-shadow: none;
+  }
+
+  ion-searchBar{
+    --border-radius: 25px;
+    --background: white;
+    --box-shadow:none;
+  }
+
+  .content-card{
+    --border-width:1px;
+    --border-color:#ffde03;
+    --border-radius: 3vw;
+    width: 94vw;
+    padding-left: 4vw;
+    --background: white;
+    ion-thumbnail{
+      --border-radius:0px;
+      --size:20px;
+    }
+  }
+
+  // .content-card-paid{
+  //   padding-top: 2vw;
+  //   --border-width:2px;
+  //   --border-color:#00ff0d;
+  //   --border-radius: 3vw;
+  //   width: 94vw;
+  //   padding-left: 4vw;
+  //   --background: white;
+  //   ion-thumbnail{
+  //     --border-radius:0px;
+  //     --size:20px;
+  //   }
+  // }
+
+  // .content-card-unpaid{
+  //   padding-top: 2vw;
+  //   --border-width:2px;
+  //   --border-color:#ff0000;
+  //   --border-radius: 3vw;
+  //   width: 94vw;
+  //   padding-left: 4vw;
+  //   --background: white;
+  //   ion-thumbnail{
+  //     --border-radius:0px;
+  //     --size:20px;
+  //   }
+  // }
+
+  .name{
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .loanId{
+    font-family:'SourceSansPro-Light';
+    font-size:20px;
+  }
+
+  .EMI{
+    font-family:'SourceSansPro-Light';
+    font-size:20px;
+  }
+
+  .todayDate{
+    text-align: center;
+    margin-left: -15px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }

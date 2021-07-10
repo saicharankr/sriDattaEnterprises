@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>listCollectionAgents</ion-title>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Collection Agents List</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+  <ion-searchbar placeholder="Search" searchIcon></ion-searchbar>
+  <ion-grid>
+    <ion-item class="content-card" lines="none">
+        <ion-thumbnail slot="start">
+          <img src="assets/custom-icons/user-avatar.svg" />
+        </ion-thumbnail>
+      <ion-col>
+        <ion-label class="name">Showroom Name</ion-label>
+        <ion-label class="loanId">Phone no. :- 93123456789</ion-label>
+        <ion-label class="EMI">Place :- Hindupur</ion-label>
+      </ion-col>
+    </ion-item>
+  </ion-grid>
 </ion-content>

@@ -1,4 +1,3 @@
-
 ion-header{
     position: unset !important;
 }
@@ -17,9 +16,23 @@ ion-header{
     --box-shadow:none;
   }
 
-  .content-card{
-    --border-width:1px;
-    --border-color:#ffde03;
+  // .content-card{
+  //   --border-width:1px;
+  //   --border-color:#ffde03;
+  //   --border-radius: 3vw;
+  //   width: 94vw;
+  //   padding-left: 4vw;
+  //   --background: white;
+  //   ion-thumbnail{
+  //     --border-radius:0px;
+  //     --size:20px;
+  //   }
+  // }
+
+  .content-card-paid{
+    padding-top: 2vw;
+    --border-width:2px;
+    --border-color:#00ff0d;
     --border-radius: 3vw;
     width: 94vw;
     padding-left: 4vw;
@@ -30,33 +43,19 @@ ion-header{
     }
   }
 
-  // .content-card-paid{
-  //   padding-top: 2vw;
-  //   --border-width:2px;
-  //   --border-color:#00ff0d;
-  //   --border-radius: 3vw;
-  //   width: 94vw;
-  //   padding-left: 4vw;
-  //   --background: white;
-  //   ion-thumbnail{
-  //     --border-radius:0px;
-  //     --size:20px;
-  //   }
-  // }
-
-  // .content-card-unpaid{
-  //   padding-top: 2vw;
-  //   --border-width:2px;
-  //   --border-color:#ff0000;
-  //   --border-radius: 3vw;
-  //   width: 94vw;
-  //   padding-left: 4vw;
-  //   --background: white;
-  //   ion-thumbnail{
-  //     --border-radius:0px;
-  //     --size:20px;
-  //   }
-  // }
+  .content-card-unpaid{
+    padding-top: 2vw;
+    --border-width:2px;
+    --border-color:#ff0000;
+    --border-radius: 3vw;
+    width: 94vw;
+    padding-left: 4vw;
+    --background: white;
+    ion-thumbnail{
+      --border-radius:0px;
+      --size:20px;
+    }
+  }
 
   .name{
     font-size: 20px;

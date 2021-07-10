@@ -1,9 +1,88 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>AddCollectionAgents</ion-title>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Collection Agent</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form>
+        <ng-template matStepLabel>Fill Basic Details</ng-template>
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input   required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Date Of Birth</ion-label>
+          <ion-input   required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Phone Number</ion-label>
+          <ion-input   required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Secondary Phone Number</ion-label>
+          <ion-input   required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input   required></ion-input>
+        </ion-item>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form >
+        <ng-template matStepLabel>Fill  address</ng-template>
+        <ion-item>
+          <ion-label position="stacked">Town/city/village</ion-label>
+          <ion-input   required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Street</ion-label>
+          <ion-input  ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">PinCode</ion-label>
+          <ion-input  ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Door Number</ion-label>
+          <ion-input  ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Full Address</ion-label>
+          <ion-input  ></ion-input>
+        </ion-item>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form >
+        <ng-template matStepLabel>  Vehicle Details </ng-template>
+        <ion-item>
+          <ion-label position="stacked">DL No.</ion-label>
+          <ion-input  ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Other Details </ion-label>
+          <ion-input  ></ion-input>
+        </ion-item>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fiveFormGroup">
+      <form>
+        <ng-template matStepLabel>Upload Documents</ng-template>
+        <ion-item>
+          <ion-label position="stacked">Aadhar Card</ion-label>
+          <ion-input ></ion-input>
+        </ion-item>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+    </mat-step>
+  </mat-stepper>
 </ion-content>

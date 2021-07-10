@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>showroom-dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-<ion-button (click)="logout()">LogOut</ion-button>
+  <ion-toolbar class="header-toolbar">
+      <ion-title class="header-title" slot="start">
+        <h1>Welcome back</h1>
+        <h2>UserName</h2>
+      </ion-title>
+      <ion-avatar class="header-profile-image" slot="end">
+        <img src="assets/custom-icons/user-avatar.svg">
+      </ion-avatar>
+  </ion-toolbar>
+  <ion-item class="tasks-card" lines="none" (click)="AddCustomer()">
+    <ion-icon src="assets/custom-icons/addCustomer.svg" slot="start"></ion-icon>
+    <ion-label>Add New Customer</ion-label>
+  </ion-item>
+  <ion-item class="tasks-card bottom-padding" lines="none" (click)="customersList()">
+    <ion-icon src="assets/custom-icons/customerList.svg" slot="start"></ion-icon>
+    <ion-label>Existing Loan List</ion-label>
+  </ion-item>
+  <ion-item class="tasks-card bottom-padding" lines="none" >
+    <ion-icon src="assets/custom-icons/OdRequest.svg" slot="start"></ion-icon>
+    <ion-label>Create OD Request</ion-label>
+  </ion-item>
 </ion-content>

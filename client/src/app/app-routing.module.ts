@@ -157,6 +157,10 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuard],
   },
+  {
+    path: 'customers-list',
+    loadChildren: () => import('./pages/shared/customers-list/customers-list.module').then( m => m.CustomersListPageModule)
+  },
   // {
   //   path: 'admin-dashboard',
   //   loadChildren: () => import('./pages/shared/admin/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardPageModule),

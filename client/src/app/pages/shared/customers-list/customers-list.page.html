@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Showrooms List</ion-title>
+    <ion-title>Existing Customers</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,14 +11,14 @@
 <ion-content>
   <ion-searchbar placeholder="Search" searchIcon></ion-searchbar>
   <ion-grid>
-    <ion-item class="content-card" lines="none">
+    <ion-item [ngClass]="user.paymentStatusCurrentMonth === 'Paid' ? 'content-card-paid':'content-card-unpaid'" lines="none" *ngFor="let user of tasksData" (click)="customerDetails(user)">
         <ion-thumbnail slot="start">
           <img src="assets/custom-icons/user-avatar.svg" />
         </ion-thumbnail>
       <ion-col>
-        <ion-label class="name">Showroom Name</ion-label>
-        <ion-label class="loanId">Phone no. :- 93123456789</ion-label>
-        <ion-label class="EMI">Place :- Hindupur</ion-label>
+        <ion-label class="name">{{user.name}}</ion-label>
+        <ion-label class="loanId">Loan no. :- {{user.loanNo}}</ion-label>
+        <ion-label class="EMI">EMI :- {{user.emi}}</ion-label>
       </ion-col>
     </ion-item>
   </ion-grid>

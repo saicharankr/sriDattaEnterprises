@@ -8,23 +8,40 @@
 </ion-header>
 
 <ion-content>
-  <ion-card (click)="expandItem(item)" *ngFor="let item of items">
-    <ion-card-header>
-      <ion-item lines="none">
-        <ion-label>Showroom</ion-label>
-        <ion-icon src="assets/custom-icons/down-arrow.svg" *ngIf="!item.expanded" slot="end"></ion-icon>
-        <ion-icon src="assets/custom-icons/up-arrow.svg" *ngIf="item.expanded" slot=end></ion-icon>
-      </ion-item>
-    </ion-card-header>
-    <ion-card-content>
-      <app-expandable expandHeight="100px" [expanded]="item.expanded">
-        <p>Hello there.</p>
-        <p>Hello there.</p>
-        <p>Hello there.</p>
-        <p>Hello there.</p>
-        <p>Hello there.</p>
-        <p>Hello there.</p>
-      </app-expandable>
-    </ion-card-content>
+  <ion-card class="profile-card">
+    <ion-item>
+      <ion-label
+        >UserName<br /><ion-text>Loan No. :123456789</ion-text></ion-label
+      >
+      <ion-avatar class="header-profile-image" slot="end">
+        <img src="assets/custom-icons/user-avatar.svg" />
+      </ion-avatar>
+    </ion-item>
   </ion-card>
+  <mat-card class="cards" >
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Showroom Details </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+  </mat-card>
+  <mat-card class="cards" >
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Showroom Details </mat-panel-title>
+          <!-- <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+</mat-card>
 </ion-content>

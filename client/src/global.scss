@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,39 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/*Custom Angular material Styles*/
+.mat-stepper-vertical {
+  margin-top: 8px !important;
+}
+
+.mat-form-field {
+  margin-top: 16px !important;
+}
+
+.mat-step-header {
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-sizing: content-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 27px;
+}
+.mat-vertical-stepper-header {
+  display: flex !important;
+  align-items: center !important;
+  height: 77px !important;
+}
+.mat-step-icon {
+  background: #ffde03 !important;
+  border-radius: 51%;
+  height: 40px !important;
+  width: 40px !important;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.mat-vertical-stepper-header .mat-step-icon {
+  margin-right: 24px !important;
+}

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/authService/auth.service';
 
@@ -9,9 +10,15 @@ import { AuthService } from 'src/app/services/authService/auth.service';
 })
 export class ShowroomDashboardPage implements OnInit {
 
-  constructor(private auth:AuthService) { }
+  constructor(private auth:AuthService,private router:Router) { }
 
   ngOnInit() {
+  }
+  AddCustomer() {
+    this.router.navigate(['/add-customer'])
+  }
+  customersList() {
+    this.router.navigate(['/customers-list'])
   }
   logout() {
   this.auth.logout()
