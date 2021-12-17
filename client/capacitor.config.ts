@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'SDE',
+  appId: 'com.sridattaenterprises.app',
+  appName: 'SriDattaEnterprises',
   webDir: 'www',
   bundledWebRuntime: false
 };

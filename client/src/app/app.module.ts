@@ -1,4 +1,3 @@
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ComponentsModule } from './components/components.module';
 import { StorageService } from './services/StorageService/storage.service';
 import { NgModule } from '@angular/core';
@@ -13,7 +12,6 @@ import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { TranslateModule ,TranslateLoader,TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 const TOKEN_KEY = 'access_token';
 
@@ -56,7 +54,7 @@ export function createTranslateLoader(httpClient: HttpClient) {
     }),
     BrowserAnimationsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },TranslatePipe,StatusBar],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },TranslatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

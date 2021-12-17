@@ -8,7 +8,7 @@
         <img src="assets/custom-icons/user-avatar.svg">
       </ion-avatar>
   </ion-toolbar>
-  <ion-item class="tasks-card" lines="none" >
+  <ion-item class="tasks-card" lines="none" (click)="showroomsList()">
     <ion-icon src="assets/custom-icons/customerList.svg" slot="start"></ion-icon>
     <ion-label>Showrooms list</ion-label>
   </ion-item>
@@ -24,4 +24,12 @@
     <ion-icon src="assets/custom-icons/OdRequest.svg" slot="start"></ion-icon>
     <ion-label>OD Requests</ion-label>
   </ion-item>
+  <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
+    <ion-fab-button class="fabButton">
+      <ion-icon size="large" name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button size=5 class="fabStyle" (click)="addNewUser()">Create New User</ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

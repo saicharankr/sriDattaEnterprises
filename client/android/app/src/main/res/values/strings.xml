@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SriDattaEnterprises</string>
+    <string name="title_activity_main">SriDattaEnterprises</string>
+    <string name="package_name">com.sridattaenterprises.app</string>
+    <string name="custom_url_scheme">com.sridattaenterprises.app</string>
+</resources>

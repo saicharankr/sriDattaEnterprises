@@ -1,0 +1,6 @@
+{
+	"appId": "com.sridattaenterprises.app",
+	"appName": "SriDattaEnterprises",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

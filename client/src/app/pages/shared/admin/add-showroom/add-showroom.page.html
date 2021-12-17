@@ -10,13 +10,13 @@
   <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form>
-        <ng-template matStepLabel>Fill Basic Details</ng-template>
+        <ng-template matStepLabel>Fill  Details</ng-template>
         <ion-item>
-          <ion-label position="stacked">Name</ion-label>
+          <ion-label position="stacked">Select User</ion-label>
           <ion-input   required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Date Of Birth</ion-label>
+          <ion-label position="stacked">Showroom Name</ion-label>
           <ion-input   required></ion-input>
         </ion-item>
         <ion-item>
@@ -25,10 +25,6 @@
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Secondary Phone Number</ion-label>
-          <ion-input   required></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Email</ion-label>
           <ion-input   required></ion-input>
         </ion-item>
       </form>
@@ -41,15 +37,7 @@
           <ion-input   required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Street</ion-label>
-          <ion-input  ></ion-input>
-        </ion-item>
-        <ion-item>
           <ion-label position="stacked">PinCode</ion-label>
-          <ion-input  ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Door Number</ion-label>
           <ion-input  ></ion-input>
         </ion-item>
         <ion-item>
@@ -81,4 +69,7 @@
       <p>You are now done.</p>
     </mat-step>
   </mat-stepper>
+  <div class="center">
+    <ion-button class="submit">Add Showroom</ion-button>
+  </div>
 </ion-content>

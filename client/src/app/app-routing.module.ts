@@ -161,6 +161,10 @@ const routes: Routes = [
     path: 'customers-list',
     loadChildren: () => import('./pages/shared/customers-list/customers-list.module').then( m => m.CustomersListPageModule)
   },
+  {
+    path: 'create-new-user',
+    loadChildren: () => import('./pages/shared/admin/create-new-user/create-new-user.module').then( m => m.CreateNewUserPageModule)
+  },
   // {
   //   path: 'admin-dashboard',
   //   loadChildren: () => import('./pages/shared/admin/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardPageModule),

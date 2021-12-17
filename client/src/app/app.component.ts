@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { BackgroundColorOptions, StatusBar, Style } from '@capacitor/status-bar';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private translate:TranslateService,private statusBar: StatusBar) {
+  constructor(private translate:TranslateService) {
     this.initializeApp()
    }
   
   initializeApp() {
     this.translate.setDefaultLang('en')
-    this.statusBar.overlaysWebView(true);
-    this.statusBar.backgroundColorByHexString('#ffffff');
+    const opts: BackgroundColorOptions = {
+      color:'#ffde03'
+    }
+    StatusBar.setBackgroundColor(opts);
    }
 }

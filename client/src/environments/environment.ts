@@ -2,8 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const ServerUrl ="http://localhost:8080"
-
+// const ServerUrl ="https://sridattaenterprisesapi.herokuapp.com"
+const ServerUrl="http://localhost:8080"
 export const environment = {
   production: false,
   url: ServerUrl,

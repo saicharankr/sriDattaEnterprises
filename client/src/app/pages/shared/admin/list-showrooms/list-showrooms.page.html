@@ -9,6 +9,7 @@
 
 
 <ion-content>
+
   <ion-searchbar placeholder="Search" searchIcon></ion-searchbar>
   <ion-grid>
     <ion-item class="content-card" lines="none">
@@ -22,4 +23,12 @@
       </ion-col>
     </ion-item>
   </ion-grid>
+  <ion-fab vertical="bottom" horizontal="start"  slot="fixed" >
+    <ion-fab-button class="fabButton">
+      <ion-icon size="large" name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button size=5 class="fabStyle" (click)="addShowroom()">Add New Showroom</ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

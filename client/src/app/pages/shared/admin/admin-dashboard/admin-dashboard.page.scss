@@ -53,4 +53,23 @@
       margin-top: 7% !important;
     }
   }
+
+  .fabStyle{
+    width: 150px;
+    --border-radius: 8px;
+    width: 150px;
+    --border-radius: 8px;
+    --background: #ffde03;
+    font-weight: 600;
+  }
+  .fabButton{
+    --background: #ffde03;
+    ion-icon{
+      color:black;
+      .close-icon{
+        color:black;
+      }
+    }
+
+  }
   

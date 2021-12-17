@@ -14,6 +14,7 @@ export class AddShowroomPage implements OnInit {
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
   fiveFormGroup: FormGroup;
+  sixFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {}
 

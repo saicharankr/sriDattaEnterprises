@@ -87,7 +87,6 @@ exports.signin = (req, res) => {
         });
       }
       res.cookie("token", token, { expire: new Date() + 9999 });
-
       return res.json({
         success: true,
         token: token,
@@ -266,6 +265,8 @@ exports.signout = (req, res) => {
 };
 
 exports.isAuth = (req, res, next) => {
+  console.log("request Profile", req.profile)
+  console.log("Request auth",req.auth)
   let user = req.profile && req.auth && req.profile.userId == req.auth.id;
   if (!user) {
     return res.status(403).json({

@@ -36,6 +36,8 @@ mongoose.connection.on("error", (err) => {
 //bring in routes
 const authRoutes=require("./routes/auth") ;
 const userRoutes=require("./routes/user");
+const showroomRoutes = require("./routes/showroom");
+const collectionAgentRoutes = require("./routes/collectionAgent");
 
 //use middleware
 app.use(morgan("dev"));
@@ -45,6 +47,8 @@ app.use(cookieParser());
 //Routes
 app.use('/',authRoutes);
 app.use('/',userRoutes);
+app.use('/',showroomRoutes);
+app.use('/',collectionAgentRoutes);
 
 //handling the authorization for routes
 app.use(function (err, req, res, next) {
@@ -62,9 +66,9 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "ECommerce Documentation",
+      title: "Documentation",
       version: "1.0.0",
-      description: "ECommerce Application api Documentation",
+      description: "Api Documentation",
       license: {
         name: "",
         url: "",
